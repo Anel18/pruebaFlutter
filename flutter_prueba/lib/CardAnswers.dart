@@ -4,10 +4,16 @@ import 'package:flutter_prueba/Answers.dart';
 
 class CardAnswers extends StatelessWidget{
   Answer answer;
+
+  CardAnswers(this.answer);
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-   return Card(
+   return InkWell(
+     onTap: (){
+       Scaffold.of(context).showSnackBar(SnackBar(content: Text("Answer"+answer.userId)));
+     },
+       child: Card(
      child: Column(
        children: <Widget>[
          Container(
@@ -22,7 +28,7 @@ class CardAnswers extends StatelessWidget{
 
        ],
      ),
-   )
+   ));
   }
 
   Widget padding(Widget widget){
